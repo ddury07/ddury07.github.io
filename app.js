@@ -3,6 +3,18 @@
  * KlarnaAsLowAs Constructor to calcualte pay from amount
  * @param {Number} price 
  */
+
+function addition(price){
+
+    var addtoprice = price + 1;
+
+    return {
+        addtoprice
+    };
+
+}
+
+
 function KlarnaAsLowAs(price) {
     this.apr                     = 0.0099; // APR in decimal form (0.99%)
     this.maxLimit                = 999;    // Upper bounds
