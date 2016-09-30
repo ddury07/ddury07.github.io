@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+
+
 <body>
 
 <script type="text/javascript" id="klarna-credit-lib-x">
@@ -16,11 +18,6 @@
 </script>
 
 
-<script>
-klarna-credit-lib-x.Credit.init({
-  client_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJzZXNzaW9uX2lkIiA6ICJiNWRhNTE0Zi0zNjI1LTQ1NGItOTQwZC1jMDhlNGFmYzEwYzciLAogICJiYXNlX3VybCIgOiAiaHR0cHM6Ly9jcmVkaXQtbmEucGxheWdyb3VuZC5rbGFybmEuY29tIiwKICAiZGVzaWduIiA6ICJrbGFybmEiLAogICJsYW5ndWFnZSIgOiAiZW4iLAogICJwdXJjaGFzZV9jb3VudHJ5IiA6ICJVUyIsCiAgInRyYWNlX2Zsb3ciIDogZmFsc2UKfQ.Z21j4OBQUz70YdW5bPv_k5dTneoIifx_oAweR8jkb18'
-})
-</script>
 
 <div id="klarna_container">
 
@@ -28,11 +25,21 @@ klarna-credit-lib-x.Credit.init({
 
 
 <script>
-klarna-credit-lib-x.Credit.load({
-  container: "#klarna_container"  
-}, function(res) {
-  console.debug(res);
-})
+
+setTimeout( function() {
+
+  Klarna.Credit.init({
+    client_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJzZXNzaW9uX2lkIiA6ICJiNWRhNTE0Zi0zNjI1LTQ1NGItOTQwZC1jMDhlNGFmYzEwYzciLAogICJiYXNlX3VybCIgOiAiaHR0cHM6Ly9jcmVkaXQtbmEucGxheWdyb3VuZC5rbGFybmEuY29tIiwKICAiZGVzaWduIiA6ICJrbGFybmEiLAogICJsYW5ndWFnZSIgOiAiZW4iLAogICJwdXJjaGFzZV9jb3VudHJ5IiA6ICJVUyIsCiAgInRyYWNlX2Zsb3ciIDogZmFsc2UKfQ.Z21j4OBQUz70YdW5bPv_k5dTneoIifx_oAweR8jkb18'
+  })
+
+
+  Klarna.Credit.load({
+    container: "#klarna_container"  
+  }, function(res) {
+    console.debug(res);
+  })
+},2000);
+
 </script>
 
 </body>
