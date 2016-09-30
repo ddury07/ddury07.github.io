@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script type="text/javascript" id="klarna-credit-lib-x">
+  /* <![CDATA[ */
+  (function(w,d) {
+    var url = 'https://credit.klarnacdn.net/lib/v1-playground/api.js';
+    n = d.createElement('script');
+    c = d.getElementById('klarna-credit-lib-x');
+    n.async = !0;
+    n.src = url + '?' + (new Date()).getTime();
+    c.parentNode.replaceChild(n, c);
+  })(this,document);
+  /* ]]> */
+</script>
+
+
+<script>
+Klarna.Credit.init({
+  client_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJzZXNzaW9uX2lkIiA6ICJiNWRhNTE0Zi0zNjI1LTQ1NGItOTQwZC1jMDhlNGFmYzEwYzciLAogICJiYXNlX3VybCIgOiAiaHR0cHM6Ly9jcmVkaXQtbmEucGxheWdyb3VuZC5rbGFybmEuY29tIiwKICAiZGVzaWduIiA6ICJrbGFybmEiLAogICJsYW5ndWFnZSIgOiAiZW4iLAogICJwdXJjaGFzZV9jb3VudHJ5IiA6ICJVUyIsCiAgInRyYWNlX2Zsb3ciIDogZmFsc2UKfQ.Z21j4OBQUz70YdW5bPv_k5dTneoIifx_oAweR8jkb18'
+})
+</script>
+
+<div id="klarna_container">
+
+</div>
+
+
+<script>
+Klarna.Credit.load({
+  container: "#klarna_container"  
+}, function(res) {
+  console.debug(res);
+})
+</script>
+
+</body>
+</html>
+
