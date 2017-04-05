@@ -1,0 +1,60 @@
+<html>
+<body>
+<h1>Klarna Checkout Test</h1>
+<div id="klarna-checkout-container" style="overflow-x: hidden;">
+  <script type="text/javascript">
+  /* <![CDATA[ */
+  (function(w,k,i,d,n,c,l,p){
+    w[k]=w[k]||function(){(w[k].q=w[k].q||[]).push(arguments)};
+    w[k].config={
+      container:w.document.getElementById(i),
+      ORDER_URL:'https://checkout-na.playground.klarna.com/yaco/orders/a471527c-aab4-624b-909a-49c7edf2324a',
+      AUTH_HEADER:'KlarnaCheckout 7i9gfv041t8jko94cdzb',
+      LAYOUT:'desktop',
+      LOCALE:'en-US',
+      ORDER_STATUS:'checkout_incomplete',
+      MERCHANT_TAC_URI:'https://api-yourapihere-com-jb4edftma52r.runscope.net/path',
+      MERCHANT_TAC_TITLE:'N100202',
+      MERCHANT_NAME:'N100202',
+      MERCHANT_COLOR:'',
+      GUI_OPTIONS:[],
+      ALLOW_SEPARATE_SHIPPING_ADDRESS:false,
+      PURCHASE_COUNTRY:'usa',
+      PURCHASE_CURRENCY:'usd',
+      DISALLOW_SKIP_NIN:false,
+      ANALYTICS:'',
+      TESTDRIVE:true,
+      CHECKOUT_DOMAIN:'https://checkout-na.playground.klarna.com',
+      ASSETS_DOMAIN:'https://checkout.klarnacdn.net',
+      BOOTSTRAP_SRC:'https://checkout.klarnacdn.net/170404-8a975b6/checkout.bootstrap.js',
+      PREFILLED:true,
+      DEVICE_RECOGNITION_URL:'https://checkout-na.playground.klarna.com/yaco/orders/a471527c-aab4-624b-909a-49c7edf2324a/device_recognition'
+    };
+    n=d.createElement('script');
+    c=d.getElementById(i);
+    n.async=!0;
+    n.src=w[k].config.BOOTSTRAP_SRC;
+    c.appendChild(n);
+    try{
+      p = ['https://checkout-na.playground.klarna.com'].concat('https://checkout.klarnacdn.net/170404-8a975b6/checkout.bootstrap.js'.split('/').slice(3,4));
+      l = p.join('/') +
+        '/api/_t/v1/snippet/load?order_url=' +
+        w.encodeURIComponent(w[k].config.ORDER_URL) + '&order_status=' +
+        w.encodeURIComponent(w[k].config.ORDER_STATUS) + '&timestamp=' +
+        (new Date).getTime();
+      ((w.Image && (new w.Image))||(d.createElement&&d.createElement('img'))||{}).src=l;
+    }catch(e){}
+  })(this,'_klarnaCheckout','klarna-checkout-container',document);
+  /* ]]> */
+  </script>
+      
+  <noscript>
+Please <a href="http://enable-javascript.com">enable JavaScript</a>.
+  </noscript>
+</div>
+
+
+</html>
+</body>
+
+
