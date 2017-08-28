@@ -28,15 +28,8 @@
 
 </div>
 
-$("p").click(function(){
-    alert("The paragraph was clicked.");
 
 <a class="button" href="#">Place Order</a>
-
-});
-
-
-
 
 
 <script>
@@ -45,7 +38,62 @@ $("p").click(function(){
         for(var i = 0; i < anchors.length; i++) {
             var anchor = anchors[i];
             anchor.onclick = function() {
-                alert('ho ho ho');
+
+              Klarna.Credit.authorize({
+  purchase_country: "US",
+  purchase_currency: "USD",
+  locale: "en-US",
+  billing_address: {
+    given_name: "John",
+    family_name: "Doe",
+    email: "john@doe.com",
+    title: "Mr",
+    street_address: "Lombard St 10",
+    street_address2: "Apt 214",
+    postal_code: "90210",
+    city: "Beverly Hills",
+    region: "CA",
+    phone: "333444555",
+    country: "US"
+  },
+  shipping_address: {
+    given_name: "John",
+    family_name: "Doe",
+    email: "john@doe.com",
+    title: "Mr",
+    street_address: "Lombard St 10",
+    street_address2: "Apt 214",
+    postal_code: "90210",
+    city: "Beverly Hills",
+    region: "CA",
+    phone: "333444555",
+    country: "US"
+  },
+  order_amount: 10,
+  order_tax_amount: 0,
+  order_lines: [{
+    type: "physical",
+    reference: "19-402-USA",
+    name: "Battery Power Pack",
+    quantity: 1,
+    unit_price: 10,
+    tax_rate: 0,
+    total_amount: 10,
+    total_discount_amount: 0,
+    total_tax_amount: 0,
+    product_url: "https://www.estore.com/products/f2a8d7e34",
+    image_url: "https://www.exampleobjects.com/logo.png"
+  }],
+  customer: {
+    date_of_birth: "1970-01-01",
+    gender: "male"
+  },
+ }, function(res) {
+  console.debug(res);
+})
+
+
+                //alert('ho ho ho');
             }
         }
     }
@@ -57,7 +105,7 @@ $("p").click(function(){
 setTimeout( function() {
 
   Klarna.Credit.init({
-    client_token: 'eyJhbGciOiJub25lIn0.ewogICJzZXNzaW9uX2lkIiA6ICIzNDUyMzUxYi1kMTUwLTVhMzgtYjI3MS02ZTIxZThiMmUwZGEiLAogICJiYXNlX3VybCIgOiAiaHR0cHM6Ly9jcmVkaXQtbmEucGxheWdyb3VuZC5rbGFybmEuY29tIiwKICAiZGVzaWduIiA6ICJrbGFybmEiLAogICJsYW5ndWFnZSIgOiAiZW4iLAogICJwdXJjaGFzZV9jb3VudHJ5IiA6ICJVUyIsCiAgInRyYWNlX2Zsb3ciIDogZmFsc2UsCiAgImVudmlyb25tZW50IiA6ICJwbGF5Z3JvdW5kIgp9.'
+    client_token: 'eyJhbGciOiJub25lIn0.ewogICJzZXNzaW9uX2lkIiA6ICIzODBmMjM2Yi01ZWNlLTU0NjItODc1ZS1iYjk0MzM0ZjE0ODgiLAogICJiYXNlX3VybCIgOiAiaHR0cHM6Ly9jcmVkaXQtbmEucGxheWdyb3VuZC5rbGFybmEuY29tIiwKICAiZGVzaWduIiA6ICJrbGFybmEiLAogICJsYW5ndWFnZSIgOiAiZW4iLAogICJwdXJjaGFzZV9jb3VudHJ5IiA6ICJVUyIsCiAgInRyYWNlX2Zsb3ciIDogZmFsc2UsCiAgImVudmlyb25tZW50IiA6ICJwbGF5Z3JvdW5kIgp9.'
   })
 
 
