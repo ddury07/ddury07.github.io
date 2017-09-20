@@ -83,7 +83,11 @@
     total_tax_amount: 0,
     product_url: "https://www.estore.com/products/f2a8d7e34",
     image_url: "https://www.exampleobjects.com/logo.png"
-  }]
+  }],
+  customer: {
+    date_of_birth: "1970-01-01Z",
+    gender: "male"
+  },
  }, function(res) {
   console.debug(res);
 })
@@ -101,7 +105,7 @@
 setTimeout( function() {
 
   Klarna.Credit.init({
-    client_token: 'eyJhbGciOiJub25lIn0.ewogICJzZXNzaW9uX2lkIiA6ICI0YjQzMzUzMy04MmE5LTU2N2EtYjVlZi0yZmUyMzgyOTMzOWIiLAogICJiYXNlX3VybCIgOiAiaHR0cHM6Ly9jcmVkaXQtbmEua2xhcm5hLmNvbSIsCiAgImRlc2lnbiIgOiAia2xhcm5hIiwKICAibGFuZ3VhZ2UiIDogImVuIiwKICAicHVyY2hhc2VfY291bnRyeSIgOiAiVVMiLAogICJhbmFseXRpY3NfcHJvcGVydHlfaWQiIDogIlVBLTM2MDUzMTM3LTEwIiwKICAidHJhY2VfZmxvdyIgOiB0cnVlLAogICJlbnZpcm9ubWVudCIgOiAicHJvZHVjdGlvbiIKfQ.'
+    client_token: 'eyJhbGciOiJub25lIn0.ewogICJzZXNzaW9uX2lkIiA6ICJmMmNkNGZlYS1lNTYwLTVjMjktYWYyNC1hNTAwMjhlZWU5MzciLAogICJiYXNlX3VybCIgOiAiaHR0cHM6Ly9jcmVkaXQtbmEua2xhcm5hLmNvbSIsCiAgImRlc2lnbiIgOiAia2xhcm5hIiwKICAibGFuZ3VhZ2UiIDogImVuIiwKICAicHVyY2hhc2VfY291bnRyeSIgOiAiVVMiLAogICJhbmFseXRpY3NfcHJvcGVydHlfaWQiIDogIlVBLTM2MDUzMTM3LTEwIiwKICAidHJhY2VfZmxvdyIgOiB0cnVlLAogICJlbnZpcm9ubWVudCIgOiAicHJvZHVjdGlvbiIKfQ.'
   })
 
 
