@@ -20,7 +20,7 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("GET", "MerchantCatalog-v2-production.json", true);
 xmlhttp.send();
 
-var obj = JSON.parse(xmlhttp.response);
+var obj = JSON.parse(xmlhttp.responseText);
 
 
 function walk(obj) {
