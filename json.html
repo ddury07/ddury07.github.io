@@ -13,6 +13,8 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myArr = JSON.parse(this.responseText);
+        console.log(myArr)
+
     }
 };
 xmlhttp.open("GET", "MerchantCatalog-v2-production.json", true);
@@ -22,7 +24,14 @@ var obj = xmlhttp
 
 console.log(xmlhttp)
 
-function walk(obj) {for (var key in obj) {  if (obj.hasOwnProperty(merchant_id)) {    var val = obj[key];    console.log(val);    walk(val);  }}
+function walk(obj) {
+  for (var key in obj) {
+    if (obj.hasOwnProperty(merchant_id)) {
+      var val = obj[key];
+      console.log(val);
+      walk(val);
+    }
+  }
 }
 walk(obj);
 
