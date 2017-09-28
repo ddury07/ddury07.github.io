@@ -10,17 +10,17 @@
 <script>
 
 var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
+xmlhttp.onreadystatechange = function(walk) {
     if (this.readyState == 4 && this.status == 200) {
         var obj = JSON.parse(this.responseText);
+        {for (var key in obj) {  if (obj.hasOwnProperty(merchant_id)) {    var val = obj[key];    console.log(val);    walk(val);  }}
+}
     }
 };
 xmlhttp.open("GET", "MerchantCatalog-v2-production.json", true);
 xmlhttp.send();
 
 
-function walk(obj) {for (var key in obj) {  if (obj.hasOwnProperty(merchant_id)) {    var val = obj[key];    console.log(val);    walk(val);  }}
-}
 walk(obj);
 
 </script>
