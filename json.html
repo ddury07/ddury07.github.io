@@ -20,6 +20,8 @@ xmlhttp.send();
 
 var obj = xmlhttp
 
+console.log(xmlhttp)
+
 function walk(obj) {for (var key in obj) {  if (obj.hasOwnProperty(merchant_id)) {    var val = obj[key];    console.log(val);    walk(val);  }}
 }
 walk(obj);
