@@ -21,7 +21,7 @@ xmlhttp.send();
 
 function walk(xmlhttp) {
   for (var key in xmlhttp) {
-    if (obj.hasOwnProperty('merchant_id')) {
+    if (xmlhttp.hasOwnProperty('merchant_id')) {
       var val = xmlhttp[key];
       console.log(val);
       walk(val);
