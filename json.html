@@ -15,7 +15,7 @@ xmlhttp.onreadystatechange = function() {
         var obj = JSON.parse(this.responseText);
 
         for (var key in obj) {
-    if (obj.hasOwnProperty(merchant_id)) {
+    if (obj.hasOwnProperty('merchant_id')) {
       var val = obj[key];
       console.log(val);
       walk(val);
