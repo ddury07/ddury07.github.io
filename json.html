@@ -21,18 +21,35 @@ xmlhttp.open("GET", "MerchantCatalog-v2-production.json", true);
 xmlhttp.send();
 
 var obj = JSON.parse(xmlhttp.responseText);
+var merchants = obj.payload.merchants
+
+function walk(merchants) {
+	for ( var key in merchants) {
+		for (var key1 in merchants[key].billing_country_configuration){
+			if(merchants[key].billing_country_configuration[key1].hasOwnProperty('billing_country')){
+				if merchants[key].billing_country_configuration[key1].billing_country = "us" {
+					if (merchants[key].billing_country_configuration[key1].billing_country.hasOwnProperty('aquiring_sources')) { 
+						if (merchants[key].billing_country_configuration[key1].billing_country.aquiring_sources.hasOwnProperty('kc')) {
+							for (var key2 in merchants[key].billing_country_configuration[key1].billing_country.aquiring_sources.kc.products) {
+									if (merchants[key].billing_country_configuration[key1].billing_country.aquiring_sources.kc.products[key2].financial_product = "deferred_interest"){ 
+											var merchant_id = merchants[key].billing_country_configuration[key1].billing_country.aquiring_sources.kc.products[key2].issuing_system_merchant_id;
+											console.log(merchant_id);
+										}
+									}
+								}
+							}
+
+						}
+
+					}
+				}
+
+			}
+		};
 
 
-function walk(obj) {
-  for (var key in obj) {
-    if (obj.hasOwnProperty('merchant_id')) {
-      var val = obj[key];
-      console.log(val);
-      walk(val);
-    }
-  }
-}
-walk(obj);
+
+walk(merchants);
 
 </script>
 
