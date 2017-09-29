@@ -27,7 +27,7 @@ function walk(merchants) {
 	for ( var key in merchants) {
 		for (var key1 in merchants[key].billing_country_configuration){
 			if(merchants[key].billing_country_configuration[key1].hasOwnProperty('billing_country')){
-				if merchants[key].billing_country_configuration[key1].billing_country = "us" {
+				if (merchants[key].billing_country_configuration[key1].billing_country = "us") {
 					if (merchants[key].billing_country_configuration[key1].billing_country.hasOwnProperty('aquiring_sources')) { 
 						if (merchants[key].billing_country_configuration[key1].billing_country.aquiring_sources.hasOwnProperty('kc')) {
 							for (var key2 in merchants[key].billing_country_configuration[key1].billing_country.aquiring_sources.kc.products) {
