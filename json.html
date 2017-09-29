@@ -31,9 +31,10 @@ function walk(merchants) {
 					if (merchants[key].billing_country_configurations[key1].hasOwnProperty('aquiring_sources')) { 
 						if (merchants[key].billing_country_configurations[key1].aquiring_sources.hasOwnProperty('kc')) {
 							for (var key2 in merchants[key].billing_country_configurations[key1].aquiring_sources.kc.products) {
-									if (merchants[key].billing_country_configurations[key1].aquiring_sources.kc.products[key2].financial_product = "deferred_interest"){ 
+									if (merchants[key].billing_country_configurations[key1].aquiring_sources.kc.products[key2].financial_products = "deferred_interest"){ 
 											var merchant_id = merchants[key].billing_country_configurations[key1].aquiring_sources.kc.products[key2].issuing_system_merchant_id
 											console.log(merchant_id);
+
 										};
 									};
 								};
