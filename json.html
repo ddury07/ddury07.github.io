@@ -27,15 +27,13 @@ function walk(merchants) {
 	for ( var key in merchants) {
 		for (var key1 in merchants[key].billing_country_configurations){
 			if(merchants[key].billing_country_configurations[key1].hasOwnProperty('billing_country')){
-				if (JSON.stringify(merchants[key].billing_country_configurations[key1].billing_country).replace(/["']/g, "") === "us") {
+				if (JSON.stringify(merchants[key].billing_country_configurations[key1].billing_country).replace(/["']/g, "") == "us") {
 					if (merchants[key].billing_country_configurations[key1].hasOwnProperty('acquiring_sources')) { 
 						if (merchants[key].billing_country_configurations[key1].acquiring_sources.hasOwnProperty('kc')) {
 							for (var key2 in merchants[key].billing_country_configurations[key1].acquiring_sources.kc.products) {
-									if (JSON.stringify(merchants[key].billing_country_configurations[key1].acquiring_sources.kc.products[key2].financial_product).replace(/["']/g, "") === "deferred_interest"){ 
+									if (JSON.stringify(merchants[key].billing_country_configurations[key1].acquiring_sources.kc.products[key2].financial_product).replace(/["']/g, "") == "deferred_interest"){ 
 											var merchant_id = merchants[key].billing_country_configurations[key1].acquiring_sources.kc.products[key2].account_contract_type_id+","+merchants[key].billing_country_configurations[key1].acquiring_sources.kc.products[key2].issuing_system_merchant_id+","+merchants[key].billing_country_configurations[key1].acquiring_sources.kc.products[key2].contract_type_id
 											console.log(merchant_id);
-
-											expect(obj.name).toEqual("0");
 
 										};
 									};
@@ -49,25 +47,6 @@ function walk(merchants) {
 
 			};
 		};
-
-													account_contract_type_id
-:
-"1177"
-allow_order_amount_mismatch
-:
-true
-arrangement_fee
-:
-0
-contract_type_id
-:
-"3028"
-currency
-:
-"USD"
-financial_product
-:
-"deferred_interest"
 
 
 
