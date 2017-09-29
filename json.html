@@ -31,7 +31,7 @@ function walk(merchants) {
 					if (merchants[key].billing_country_configurations[key1].hasOwnProperty('acquiring_sources')) { 
 						if (merchants[key].billing_country_configurations[key1].acquiring_sources.hasOwnProperty('kc')) {
 							for (var key2 in merchants[key].billing_country_configurations[key1].acquiring_sources.kc.products) {
-									if (if(JSON.stringify(merchants[key].billing_country_configurations[key1].acquiring_sources.kc.products[key2].financial_product).replace(/["']/g, "") === "deferred_interest")){ 
+									if (JSON.stringify(merchants[key].billing_country_configurations[key1].acquiring_sources.kc.products[key2].financial_product).replace(/["']/g, "") === "deferred_interest"){ 
 											var merchant_id = merchants[key].billing_country_configurations[key1].acquiring_sources.kc.products[key2].account_contract_type_id+","+merchants[key].billing_country_configurations[key1].acquiring_sources.kc.products[key2].issuing_system_merchant_id+","+merchants[key].billing_country_configurations[key1].acquiring_sources.kc.products[key2].contract_type_id
 											console.log(merchant_id);
 
