@@ -28,11 +28,11 @@ function walk(merchants) {
 		for (var key1 in merchants[key].billing_country_configurations){
 			if(merchants[key].billing_country_configurations[key1].hasOwnProperty('billing_country')){
 				if (merchants[key].billing_country_configurations[key1].billing_country = "us") {
-					if (merchants[key].billing_country_configurations[key1].hasOwnProperty('aquiring_sources')) { 
-						if (merchants[key].billing_country_configurations[key1].aquiring_sources.hasOwnProperty('kc')) {
-							for (var key2 in merchants[key].billing_country_configurations[key1].aquiring_sources.kc.products) {
-									if (merchants[key].billing_country_configurations[key1].aquiring_sources.kc.products[key2].financial_products = "deferred_interest"){ 
-											var merchant_id = merchants[key].billing_country_configurations[key1].aquiring_sources.kc.products[key2].issuing_system_merchant_id
+					if (merchants[key].billing_country_configurations[key1].hasOwnProperty('acquiring_sources')) { 
+						if (merchants[key].billing_country_configurations[key1].acquiring_sources.hasOwnProperty('kc')) {
+							for (var key2 in merchants[key].billing_country_configurations[key1].acquiring_sources.kc.products) {
+									if (merchants[key].billing_country_configurations[key1].acquiring_sources.kc.products[key2].financial_products = "deferred_interest"){ 
+											var merchant_id = merchants[key].billing_country_configurations[key1].acquiring_sources.kc.products[key2].issuing_system_merchant_id
 											console.log(merchant_id);
 
 										};
