@@ -104,7 +104,18 @@
 setTimeout( function() {
 
   Klarna.Credit.init({
-    client_token: 'eyJhbGciOiJub25lIn0.ewogICJzZXNzaW9uX2lkIiA6ICIyNzIzYjNjOS0zMjBjLTViNmQtOTEwNC1hY2RjNmUwNmUyOGQiLAogICJiYXNlX3VybCIgOiAiaHR0cHM6Ly9jcmVkaXQtbmEucGxheWdyb3VuZC5rbGFybmEuY29tIiwKICAiZGVzaWduIiA6ICJrbGFybmEiLAogICJsYW5ndWFnZSIgOiAiZW4iLAogICJwdXJjaGFzZV9jb3VudHJ5IiA6ICJVUyIsCiAgInRyYWNlX2Zsb3ciIDogZmFsc2UsCiAgImVudmlyb25tZW50IiA6ICJwbGF5Z3JvdW5kIgp9.'
+    client_token: 'eyJhbGciOiJub25lIn0.ewogICJzZXNzaW9uX2lkIiA6ICI4YTg5NzI5My1kZWE2LTU2NDEtYTMxYS02NjUwZDNiMTU0MmQiLAogICJiYXNlX3VybCIgOiAiaHR0cHM6Ly9jcmVkaXQtbmEucGxheWdyb3VuZC5rbGFybmEuY29tIiwKICAiZGVzaWduIiA6ICJrbGFybmEiLAogICJsYW5ndWFnZSIgOiAiZW4iLAogICJwdXJjaGFzZV9jb3VudHJ5IiA6ICJVUyIsCiAgInRyYWNlX2Zsb3ciIDogZmFsc2UsCiAgImVudmlyb25tZW50IiA6ICJwbGF5Z3JvdW5kIgp9.'
+
+
+
+
+  Klarna.Credit.load({
+    container: "#klarna_container"  
+  }, function(res) {
+    console.debug(res);
+  })
+},2000);
+
   })
 
 
